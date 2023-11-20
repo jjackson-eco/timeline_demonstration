@@ -7,6 +7,8 @@
 
 ---
 
+[![DOI](https://zenodo.org/badge/721133613.svg)](https://zenodo.org/doi/10.5281/zenodo.10160252)
+
 This directory contains scripts and analysis data for our work on an empirical demonstration of a sequence of signals preceding a population collapse in the ciliate _Paramecium caudatum_. For the manuscript please see [the Authorea entry](XXXX.XXXX.XXXX). Package version info for this analysis is given below.
 
 Analysis scripts can be found in the `code/` sub-repository, manuscript figures and output in the `output/` sub-repository, and analysis data in the `data/` sub-repository. 
