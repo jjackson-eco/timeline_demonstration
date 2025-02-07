@@ -29,7 +29,7 @@ library(ggpubr)
 #### 1. Load and wrangle ####
 
 ## Load the data
-load("Data//data_complete_rep_caudatum.RData")
+load("data/data_complete_rep_caudatum.RData")
 
 ## Temporal events
 t_init <- as.POSIXct("2022-10-08 06:00:00", tz = "UTC") #reference point: we begin analysing after 5 days of growth and acclimation
@@ -118,11 +118,11 @@ caudatum_no_cycle_for_analysis<-caudatum_stl %>% select(replicate,time_date, tim
                                                         mean_length_rep, max_abundance_rep, max_abundance_rep_nocycle,
                                                         mean_speed_rep_nocycle, mean_length_rep_nocycle)
 
-
-save(caudatum_no_cycle_for_analysis, file = "Data/multivariate_caudatum_no_cycle_for_analysis.RData")
+save(caudatum_stl, file = "data/multivariate_caudatum_full_stl.RData")
+save(caudatum_no_cycle_for_analysis, file = "data/multivariate_caudatum_no_cycle_for_analysis.RData")
 
 #_______________________________________________________________________________
-#### 3. Compare plots raw vs de-trended data ####
+#### 3. Supplementary plots raw data - Compare plots raw vs de-trended data ####
 
 ## 3.1. Plot raw time series CONTROL treatment####
 
@@ -190,12 +190,10 @@ det_stack_plots_control<-ggarrange(det_speed_plot_control,det_moprh_plot_control
 label_text <- c("A","B")
 
 fig.S1<-ggarrange(raw_stack_plots_control, det_stack_plots_control, ncol = 2, labels = c("A","B"))
+
 #save
-ggsave(fig.S1, filename = "Results/Fig.S1_raw_vs_detrended_control.pdf",
+ggsave(fig.S1, filename = "output/supplementary/figS1_raw_vs_detrended_control.jpeg",
        width = 45, height = 30, units = "cm", dpi = 800)
-
-
-
 
 ## 3.4. Plot raw time series pollution treatment ####
 raw_ab_plot_pollution<-ggplot(data = data_complete_rep_caudatum %>% filter(treatment == "pollution",
@@ -280,10 +278,8 @@ label_text <- c("A","B")
 
 fig.S2<-ggarrange(raw_stack_plots_pollution, det_stack_plots_pollution, ncol = 2, labels = c("A","B"))
 #save
-ggsave(fig.S2, filename = "Results/Fig.S2_raw_vs_detrended_pollution.pdf",
+ggsave(fig.S2, filename = "output/supplementary/figS2_raw_vs_detrended_pollution.jpeg",
        width = 45, height = 30, units = "cm", dpi = 800)
-
-
 
 ## 3.8. Plot raw time series PREDATOR treatment####
 
@@ -363,6 +359,7 @@ det_stack_plots_predator<-ggarrange(det_speed_plot_predator,det_moprh_plot_preda
 label_text <- c("A","B")
 
 fig.S3<-ggarrange(raw_stack_plots_predator, det_stack_plots_predator, ncol = 2, labels = c("A","B"))
+
 #save
-ggsave(fig.S3, filename = "Results/Fig.S3_raw_vs_detrended_predator.pdf",
+ggsave(fig.S3, filename = "output/supplementary/figS3_raw_vs_detrended_predator.jpeg",
        width = 45, height = 30, units = "cm", dpi = 800)

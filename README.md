@@ -1,8 +1,8 @@
 # Analysis for 
 # _Multivariate signals of population collapse in a high-throughput ecological experiment_
-#### Cerini, F., Jackson, J., Childs, D.Z., & Clements, C.F.
+#### Cerini, F., Jackson, J., O'Brien, D., Childs, D.Z., & Clements, C.F.
 
-#### 2023-11-20
+#### 2025-02-07
 #### Repository created by John Jackson and Francesco Cerini
 
 ---
@@ -11,12 +11,14 @@
 
 This directory contains scripts and analysis data for our work on an empirical demonstration of a sequence of signals preceding a population collapse in the ciliate _Paramecium caudatum_. For the manuscript please see [the Authorea entry](XXXX.XXXX.XXXX). Package version info for this analysis is given below.
 
-Analysis scripts can be found in the `code/` sub-repository, manuscript figures and output in the `output/` sub-repository, and analysis data in the `data/` sub-repository. 
+Analysis scripts can be found in the `scripts/` sub-repository, figures in the `output/` sub-repository, and analysis data in the `data/` sub-repository. 
 
 Scripts are labeled A and B in order of the analysis, and are as follows:
 
 1. `A_data_cleaning.R` - Data cleaning, seasonal decomposition and supplementary figures.
-2. `B_timeline_demonstration_fullanalysis.R` - Full analysis for the study, including pre-analysis (autocorrelation and basis dimension selection), modelling and predicitions using GAM for the timeseries, EWS analysis, and figure plotting.
+2. `B_autocorrelation_k_selection.R` - Preparatory analysis selecting for k (basis dimension in GAM) and exploring autocorrelation
+3. `C_gam_ews.R` - Additive model analysis for P.caudatum, include timeline component models and EWS analysis
+4. `D_piecewise_regression.R`- Secondary analysis approach using piecewise Bayesian linear regression/
 
 ## System Information and Package Versions
 
